@@ -3,12 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+  ::selection {
+    @apply bg-black text-white;
+  }
+
   body {
     @apply font-sans bg-white;
   }
 }
 
 @layer components {
+  .container {
+    @apply max-w-6xl px-4 mx-auto;
+  }
+
   .link {
     @apply text-blue-500 underline;
   }

@@ -3,92 +3,93 @@
   import { gsap, TweenLite, Linear, Power3, TimelineLite } from 'gsap/dist/gsap'
   import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
   gsap.registerPlugin(ScrollTrigger)
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte'
 
-  export let scrollDirection: 0 | 1 = 1;
-  export let speed = 160;
-  export let boxCount = 4;
+  export let scrollDirection: 0 | 1 = 1
+  export let speed = 160
+  export let repeat = 4
 
-  let boxWidth = null;
-  let totalWidth = null;
-  let no01 = null;
-  let currentDir = null;
-  let dirFromLeft = null;
-  let dirFromRight = null;
-  let mod = null;
-  let animation = null;
-  let scrollAnimation = new TimelineLite();
-  let resize = null;
-  let previousWinWidth = null;
-  let lastScrollDir = 'down';
-  let lastScrollTop = null;
+  let boxWidth = null
+  let totalWidth = null
+  let no01 = null
+  let currentDir = null
+  let dirFromLeft = null
+  let dirFromRight = null
+  let mod = null
+  let animation = null
+  let scrollAnimation = new TimelineLite()
+  let resize = null
+  let previousWinWidth = null
+  let lastScrollDir = 'down'
+  let lastScrollTop = null
 
   // refs
-  let wrapperEl = null;
-  let marqueeEl = null;
-  let boxEl = null;
-  let boxesEl = null;
+  let wrapperEl = null
+  let marqueeEl = null
+  let boxEl = null
+  let boxesEl = null
 
   onMount(async () => {
     ScrollTrigger.defaults({
       toggleActions: 'restart pause resume pause'
     })
-    setTimeout(function() {
-      wrapperEl.classList.remove('opacity-0')
-      scrollAnimation.from(
-        marqueeEl,
-        {
-          scrollTrigger: {
-            trigger: marqueeEl,
-            start: '-300% center',
-            scrub: 1
-          },
-          x: '-=200',
-          ease: Power3.easeOut,
-          alpha: 0,
-          duration: 3
+
+    tick()
+
+    wrapperEl.classList.remove('opacity-0')
+    scrollAnimation.from(
+      marqueeEl,
+      {
+        scrollTrigger: {
+          trigger: marqueeEl,
+          start: '-300% center',
+          scrub: 1
         },
-        0
-      )
-    }, 1500)
+        x: '-=200',
+        ease: Power3.easeOut,
+        alpha: 0,
+        duration: 3
+      },
+      0
+    )
 
     window.addEventListener('resize', onResize)
     window.addEventListener('scroll', onScroll)
     previousWinWidth = window.innerWidth
-    await setMarquee()
+    setMarquee()
     animateMarquee(scrollDirection === 1 ? 'left' : 'right')
   })
 
   const onScroll = () => {
-      const st = window.pageYOffset || document.documentElement.scrollTop
-      let scrollDir = null
-      if (st > lastScrollTop) {
-        scrollDir = 'down'
+    const st = window.pageYOffset || document.documentElement.scrollTop
+    let scrollDir = null
+    if (st > lastScrollTop) {
+      scrollDir = 'down'
+    } else {
+      scrollDir = 'up'
+    }
+
+    if (lastScrollDir !== scrollDir) {
+      if (scrollDir === 'down') {
+        animateMarquee(scrollDirection === 1 ? 'left' : 'right')
+        lastScrollDir = scrollDir
       } else {
-        scrollDir = 'up'
+        animateMarquee(scrollDirection === 1 ? 'right' : 'left')
+        lastScrollDir = scrollDir
       }
+    }
 
-      if (lastScrollDir !== scrollDir) {
-        if (scrollDir === 'down') {
-          animateMarquee(scrollDirection === 1 ? 'left' : 'right')
-          lastScrollDir = scrollDir
-        } else {
-          animateMarquee(scrollDirection === 1 ? 'right' : 'left')
-          lastScrollDir = scrollDir
-        }
-      }
-
-      lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
+    lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
   }
-  
+
   const onResize = () => {
     clearTimeout(resize)
-    resize = setTimeout(function() {
+    resize = setTimeout(function () {
       if (window.innerWidth !== previousWinWidth) {
         previousWinWidth = window.innerWidth
         resetMarquee()
       }
-    }, 1000)
+    }, 100)
   }
 
   const resetMarquee = () => {
@@ -99,7 +100,7 @@
 
   const setMarquee = () => {
     boxWidth = boxEl.offsetWidth
-    totalWidth = boxWidth * boxCount
+    totalWidth = boxWidth * repeat
     no01 = marqueeEl.querySelectorAll('.box')
     dirFromLeft = '+=' + totalWidth
     dirFromRight = '-=' + totalWidth
@@ -115,8 +116,6 @@
         return i * boxWidth
       }
     })
-
-    return true
   }
 
   const marquee = () => {
@@ -130,8 +129,8 @@
       repeat: -1
     })
   }
-  
-  const animateMarquee = (dir) => {
+
+  const animateMarquee = dir => {
     if (dir === 'left') {
       currentDir = dirFromLeft
     } else {
@@ -148,12 +147,12 @@
     style="margin-left: -200px"
   >
     <div bind:this={boxesEl} class="relative -my-4">
-      {#each {length: boxCount} as _}
+      {#each { length: repeat } as _}
         <div
           bind:this={boxEl}
-          class="box absolute px-4 text-9xl leading-4 font-extralight tracking-widest whitespace-nowrap uppercase"
+          class="box absolute font-inter px-4 text-9xl leading-4 font-thin tracking-widest whitespace-nowrap uppercase"
         >
-          <slot></slot>
+          <slot />
         </div>
       {/each}
     </div>

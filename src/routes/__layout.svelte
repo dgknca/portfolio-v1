@@ -1,5 +1,6 @@
 <script lang="ts">
   import '../global.postcss'
+  import MetaTags from '$lib/MetaTags.svelte'
   import { theme } from './store'
   import { onMount } from 'svelte'
   import MouseFollow from '$lib/MouseFollow.svelte'
@@ -10,6 +11,10 @@
     }
   })
 </script>
+
+<svelte:head>
+  <MetaTags />
+</svelte:head>
 
 <main>
   <MouseFollow />
