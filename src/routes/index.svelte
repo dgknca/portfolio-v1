@@ -35,7 +35,7 @@
     <p class="mt-3">
       A UI focused front-end developer based in Istanbul, Turkey. More of a design-minded front-end
       developer or <a
-        class="link"
+        class="link-inline"
         href="https://bradfrost.com/blog/post/frontend-design/"
         target="_blank"
         rel="nofollow">front-end designers</a

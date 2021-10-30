@@ -1,22 +1,14 @@
 <script lang="ts">
   import '../global.postcss'
   import MetaTags from '$lib/MetaTags.svelte'
-  import { theme } from './store'
-  import { onMount } from 'svelte'
-  import MouseFollow from '$lib/MouseFollow.svelte'
-
-  onMount(() => {
-    if ($theme === 'dark') {
-      document.querySelector('html').classList.add('dark')
-    }
-  })
+  import Header from '$lib/Header.svelte'
 </script>
 
 <svelte:head>
   <MetaTags />
 </svelte:head>
 
+<Header />
 <main>
-  <MouseFollow />
   <slot />
 </main>
