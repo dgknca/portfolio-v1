@@ -26,11 +26,11 @@
   <Marquee><span class="font-normal">ui</span> developer</Marquee>
 </div>
 
-<div class="flex">
-  <div class="w-1/2 ml-auto mt-10 px-4 flex items-center justify-center">
+<div class="container flex py-10 mt-3">
+  <div class="w-1/2 ml-auto px-4 flex items-center justify-center">
     <h2 class="text-6xl font-syne font-bold">about</h2>
   </div>
-  <div class="w-1/2 ml-auto mt-10 px-4">
+  <div class="w-1/2 px-4">
     <h2 class="text-xl font-syne font-bold">Developer With Designer's Eye</h2>
     <p class="mt-3">
       A UI focused front-end developer based in Istanbul, Turkey. More of a design-minded front-end
