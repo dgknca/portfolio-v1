@@ -5,9 +5,9 @@
   gsap.registerPlugin(ScrollTrigger)
   import { onMount } from 'svelte';
 
-  export let text = '';
   export let scrollDirection: 0 | 1 = 1;
   export let speed = 160;
+  export let boxCount = 4;
 
   let boxWidth = null;
   let totalWidth = null;
@@ -22,7 +22,6 @@
   let previousWinWidth = null;
   let lastScrollDir = 'down';
   let lastScrollTop = null;
-  let boxCount = 4;
 
   // refs
   let wrapperEl = null;
@@ -30,7 +29,7 @@
   let boxEl = null;
   let boxesEl = null;
 
-  onMount(() => {
+  onMount(async () => {
     ScrollTrigger.defaults({
       toggleActions: 'restart pause resume pause'
     })
@@ -56,7 +55,7 @@
     window.addEventListener('resize', onResize)
     window.addEventListener('scroll', onScroll)
     previousWinWidth = window.innerWidth
-    setMarquee()
+    await setMarquee()
     animateMarquee(scrollDirection === 1 ? 'left' : 'right')
   })
 
@@ -64,15 +63,12 @@
       const st = window.pageYOffset || document.documentElement.scrollTop
       let scrollDir = null
       if (st > lastScrollTop) {
-        // downscroll code
         scrollDir = 'down'
       } else {
-        // upscroll code
         scrollDir = 'up'
       }
 
       if (lastScrollDir !== scrollDir) {
-        console.log('scrollDirection: ', scrollDirection);
         if (scrollDir === 'down') {
           animateMarquee(scrollDirection === 1 ? 'left' : 'right')
           lastScrollDir = scrollDir
@@ -103,20 +99,24 @@
 
   const setMarquee = () => {
     boxWidth = boxEl.offsetWidth
-    totalWidth = boxWidth * boxCount //  * n of boxes
+    totalWidth = boxWidth * boxCount
     no01 = marqueeEl.querySelectorAll('.box')
     dirFromLeft = '+=' + totalWidth
     dirFromRight = '-=' + totalWidth
 
     mod = gsap.utils.wrap(0, totalWidth)
 
-    boxesEl.setAttribute('style', 'left: -' + boxWidth + 'px')
+    gsap.to(boxesEl, {
+      x: boxWidth * -1
+    })
 
     gsap.set(no01, {
       x(i) {
         return i * boxWidth
       }
     })
+
+    return true
   }
 
   const marquee = () => {
@@ -139,20 +139,19 @@
     }
     marquee()
   }
-
 </script>
 
-<div bind:this={wrapperEl} class="w-full overflow-x-hidden opacity-0">
+<div bind:this={wrapperEl} class="w-full overflow-hidden -my-8 opacity-0">
   <div
     bind:this={marqueeEl}
-    class="wrapper overflow-hidden w-[200%] h-40 flex items-center"
+    class="wrapper overflow-hidden w-[200%] h-44 flex items-center"
     style="margin-left: -200px"
   >
-    <div bind:this={boxesEl} class="relative my-auto">
+    <div bind:this={boxesEl} class="relative -my-4">
       {#each {length: boxCount} as _}
         <div
           bind:this={boxEl}
-          class="box absolute font-sans px-4 text-9xl leading-4 font-thin tracking-tight whitespace-nowrap uppercase"
+          class="box absolute px-4 text-9xl leading-4 font-extralight tracking-widest whitespace-nowrap uppercase"
         >
           <slot></slot>
         </div>
