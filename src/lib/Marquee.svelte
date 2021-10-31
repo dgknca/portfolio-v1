@@ -99,6 +99,7 @@
   }
 
   const setMarquee = () => {
+    if (!boxEl) return
     boxWidth = boxEl.offsetWidth
     totalWidth = boxWidth * repeat
     no01 = marqueeEl.querySelectorAll('.box')

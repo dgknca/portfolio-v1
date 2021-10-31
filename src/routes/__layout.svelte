@@ -2,6 +2,7 @@
   import '../global.postcss'
   import MetaTags from '$lib/MetaTags.svelte'
   import Header from '$lib/Header.svelte'
+  import Footer from '$lib/Footer.svelte'
 </script>
 
 <svelte:head>
@@ -12,3 +13,4 @@
 <main>
   <slot />
 </main>
+<Footer />
