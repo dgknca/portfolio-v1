@@ -2,7 +2,7 @@
   import Logo from '$lib/Logo.svelte'
 </script>
 
-<header class="py-3">
+<header class="py-4">
   <div class="container flex items-center">
     <a href="/" sveltekit:prefetch>
       <Logo />
