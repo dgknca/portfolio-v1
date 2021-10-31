@@ -7,9 +7,9 @@
     <a href="/" sveltekit:prefetch>
       <Logo />
     </a>
-    <div class="flex-1"></div>
+    <div class="flex-1" />
     <nav class="flex items-center">
-      <a href="/github" class="link" sveltekit:prefetch>Github</a>
+      <a href="/open-source" class="link" sveltekit:prefetch>Open Source</a>
     </nav>
   </div>
 </header>

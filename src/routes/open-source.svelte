@@ -6,7 +6,7 @@
 </script>
 
 <div class="py-8">
-  <Marquee>github projects</Marquee>
+  <Marquee>open source projects</Marquee>
 </div>
 
 <div class="container py-10">
