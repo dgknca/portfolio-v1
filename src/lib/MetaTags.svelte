@@ -2,7 +2,7 @@
 <title>Doğukan Çavuş</title>
 <meta name="title" content="Doğukan Çavuş" />
 <meta name="description" content="Doğukan Çavuş | Frontend - UI Developer" />
-<meta name="keywords" content="Svelte, SvelteKit, Svelte-kit, Tailwind, HTML, CSS, JavaScript" />
+<meta name="keywords" content="UI Developer, Frontend developer, freelance, html, css, pixel-perfect" />
 <meta name="author" content="@dgknca" />
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
