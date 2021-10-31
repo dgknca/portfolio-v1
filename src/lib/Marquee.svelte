@@ -108,7 +108,7 @@
 
     mod = gsap.utils.wrap(0, totalWidth)
 
-    gsap.to(boxesEl, {
+    gsap.set(boxesEl, {
       x: boxWidth * -1
     })
 
