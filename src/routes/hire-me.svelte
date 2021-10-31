@@ -26,8 +26,9 @@
   </div>
 </div>
 
-<div class="container py-10">
-  <div class="flex">
+<div class="container py-10 mt-3">
+  <h2 class="text-6xl font-syne font-bold text-center">Services</h2>
+  <div class="flex mt-5">
     <div class="flex items-center justify-center w-6/12 p-4">
       <h2 class="font-syne font-bold text-2xl">Fiverr</h2>
     </div>
