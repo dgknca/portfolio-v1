@@ -148,12 +148,16 @@
     style="margin-left: -200px"
   >
     <div bind:this={boxesEl} class="relative -my-4">
-      {#each { length: repeat } as _}
+      {#each { length: repeat } as _, i}
         <div
           bind:this={boxEl}
           class="box absolute font-inter px-4 text-9xl leading-4 font-thin tracking-widest whitespace-nowrap uppercase"
         >
-          <slot />
+          {#if i === 0}
+            <h1><slot /></h1>
+          {:else}
+            <slot />
+          {/if}
         </div>
       {/each}
     </div>
