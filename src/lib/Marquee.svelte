@@ -84,18 +84,17 @@
 
   const onResize = () => {
     clearTimeout(resize)
-    resize = setTimeout(async () => {
+    resize = setTimeout(() => {
       if (window.innerWidth !== previousWinWidth) {
-        await tick()
         previousWinWidth = window.innerWidth
         resetMarquee()
       }
     }, 100)
   }
 
-  const resetMarquee = () => {
+  const resetMarquee = async () => {
     animation.pause()
-    setMarquee()
+    await setMarquee()
     marquee()
   }
 
@@ -118,6 +117,8 @@
         return i * boxWidth
       }
     })
+
+    return true
   }
 
   const marquee = () => {

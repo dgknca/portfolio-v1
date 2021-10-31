@@ -49,12 +49,28 @@
   on:mouseenter={handleMouseenter}
   on:mouseleave={handleMouseleave}
 >
-  <div bind:this={cont1} class="p-6 w-full flex items-center justify-between">
-    <h4 class="text-lg font-bold mr-4">{name}</h4>
-    <svg class="flex-shrink-0" width="40" height="40" viewBox="0 0 30 28"><path d="M27.824 14.588L15.648 27.145l.777.855L30 14 16.425 0l-.777.855 12.176 12.557H0v1.176z"></path></svg>
+  <div bind:this={cont1} class="p-4 md:p-6 w-full flex items-center justify-between">
+    <h4 class="text-base md:text-lg font-bold mr-4">{name}</h4>
+    <svg class="flex-shrink-0 w-6 md:w-10 h-6 md:h-10" width="40" height="40" viewBox="0 0 30 28"
+      ><path
+        d="M27.824 14.588L15.648 27.145l.777.855L30 14 16.425 0l-.777.855 12.176 12.557H0v1.176z"
+      /></svg
+    >
   </div>
-  <div bind:this={cont2} class="p-6 absolute left-0 top-0 bg-black text-white w-full flex items-center justify-between">
-    <h4 class="text-lg font-bold mr-4">{name}</h4>
-    <svg class="flex-shrink-0" width="40" height="40" viewBox="0 0 30 28" fill="#fff"><path d="M27.824 14.588L15.648 27.145l.777.855L30 14 16.425 0l-.777.855 12.176 12.557H0v1.176z"></path></svg>
+  <div
+    bind:this={cont2}
+    class="p-4 md:p-6 absolute left-0 top-0 bg-black text-white w-full flex items-center justify-between"
+  >
+    <h4 class="text-base md:text-lg font-bold mr-4">{name}</h4>
+    <svg
+      class="flex-shrink-0 w-6 md:w-10 h-6 md:h-10"
+      width="40"
+      height="40"
+      viewBox="0 0 30 28"
+      fill="#fff"
+      ><path
+        d="M27.824 14.588L15.648 27.145l.777.855L30 14 16.425 0l-.777.855 12.176 12.557H0v1.176z"
+      /></svg
+    >
   </div>
 </a>

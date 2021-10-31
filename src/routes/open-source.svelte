@@ -7,12 +7,12 @@
   <Marquee>open source projects</Marquee>
 </div>
 
-<div class="container py-10">
-  <div class="flex">
-    <div class="flex items-center justify-center w-6/12 p-4">
+<div class="container py-5 md:py-10 mt-3">
+  <div class="md:flex mt-4 md:mt-0">
+    <div class="md:w-6/12 flex items-center justify-center px-4 md:py-4">
       <h2 class="font-syne font-bold text-2xl">CSS</h2>
     </div>
-    <div class="w-6/12 p-4">
+    <div class="md:w-6/12 px-4 md:py-4 mt-2">
       <RepositoryCard
         name="css-skeletons"
         href="https://github.com/dgknca/css-skeletons"
@@ -26,11 +26,11 @@
     </div>
   </div>
 
-  <div class="flex">
-    <div class="flex items-center justify-center w-6/12 p-4">
+  <div class="md:flex mt-4 md:mt-0">
+    <div class="md:w-6/12 flex items-center justify-center px-4 md:py-4">
       <h2 class="font-syne font-bold text-2xl">Javascript</h2>
     </div>
-    <div class="w-6/12 p-4">
+    <div class="md:w-6/12 px-4 md:py-4 mt-2">
       <RepositoryCard
         name="simple-notify"
         href="https://github.com/simple-notify/simple-notify"
@@ -44,11 +44,11 @@
     </div>
   </div>
 
-  <div class="flex">
-    <div class="flex items-center justify-center w-6/12 p-4">
+  <div class="md:flex mt-4 md:mt-0">
+    <div class="md:w-6/12 flex items-center justify-center px-4 md:py-4">
       <h2 class="font-syne font-bold text-2xl">Vue</h2>
     </div>
-    <div class="w-6/12 p-4">
+    <div class="md:w-6/12 px-4 md:py-4 mt-2">
       <RepositoryCard
         name="vue-multi-split-pane"
         href="https://github.com/dgknca/vue-multi-split-pane"
@@ -62,11 +62,11 @@
     </div>
   </div>
 
-  <div class="flex">
-    <div class="flex items-center justify-center w-6/12 p-4">
+  <div class="md:flex mt-4 md:mt-0">
+    <div class="md:w-6/12 flex items-center justify-center px-4 md:py-4">
       <h2 class="font-syne font-bold text-2xl">Contributor</h2>
     </div>
-    <div class="w-6/12 p-4">
+    <div class="md:w-6/12 px-4 md:py-4 mt-2">
       <RepositoryCard name="vue3-tree" description="A tree library for Vue 3" />
     </div>
   </div>

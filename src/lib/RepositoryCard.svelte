@@ -50,12 +50,12 @@
   on:mouseenter={handleMouseenter}
   on:mouseleave={handleMouseleave}
 >
-  <div bind:this={cont1} class="p-6 w-full">
-    <h4 class="text-lg font-bold">{name}</h4>
+  <div bind:this={cont1} class="p-4 md:p-6 w-full">
+    <h4 class="text-base md:text-lg font-bold">{name}</h4>
     <p class="text-xs mt-2">{description}</p>
   </div>
-  <div bind:this={cont2} class="p-6 absolute left-0 top-0 bg-black text-white w-full">
-    <h4 class="text-lg font-bold">{name}</h4>
+  <div bind:this={cont2} class="p-4 md:p-6 absolute left-0 top-0 bg-black text-white w-full">
+    <h4 class="text-base md:text-lg font-bold">{name}</h4>
     <p class="text-xs mt-2">{description}</p>
   </div>
 </a>
