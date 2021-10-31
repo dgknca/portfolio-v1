@@ -9,7 +9,7 @@
 
 <div class="container md:flex py-5 md:py-10 mt-3">
   <div class="md:w-1/2 px-4 flex items-center justify-center">
-    <h2 class="text-4xl md:text-6xl font-syne font-bold text-center">Let's start your project</h2>
+    <h2 class="text-4xl md:text-6xl font-syne font-bold text-center md:text-left">Let's start your project</h2>
   </div>
   <div class="md:w-1/2 px-4 mt-5 md:mt-0">
     <p class="mt-3">
