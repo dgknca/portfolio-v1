@@ -84,8 +84,9 @@
 
   const onResize = () => {
     clearTimeout(resize)
-    resize = setTimeout(function () {
+    resize = setTimeout(async () => {
       if (window.innerWidth !== previousWinWidth) {
+        await tick()
         previousWinWidth = window.innerWidth
         resetMarquee()
       }
@@ -144,14 +145,14 @@
 <div bind:this={wrapperEl} class="w-full overflow-hidden -my-8 opacity-0">
   <div
     bind:this={marqueeEl}
-    class="wrapper overflow-hidden w-[200%] h-44 flex items-center"
+    class="wrapper overflow-hidden w-[200%] h-20 sm:h-28 md:h-32 lg:h-36 xl:h-44 flex items-center"
     style="margin-left: -200px"
   >
     <div bind:this={boxesEl} class="relative -my-4">
       {#each { length: repeat } as _, i}
         <div
           bind:this={boxEl}
-          class="box absolute font-inter px-4 text-9xl leading-4 font-thin tracking-widest whitespace-nowrap uppercase"
+          class="box absolute font-inter px-2 text-4xl leading-4 sm:px-2 sm:text-6xl sm:leading-4 md:px-3 md:text-7xl md:leading-4 lg:px-3 lg:text-8xl lg:leading-4 xl:px-4 xl:text-9xl xl:leading-4 font-thin tracking-widest whitespace-nowrap uppercase"
         >
           {#if i === 0}
             <h1><slot /></h1>
@@ -163,6 +164,3 @@
     </div>
   </div>
 </div>
-
-<style lang="postcss">
-</style>

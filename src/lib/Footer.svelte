@@ -4,8 +4,8 @@
 
 <footer class="mt-6 border-t border-gray-400">
   <div class="container flex items-center py-6">
-    <ul class="flex">
-      <li class="font-syne text-sm font-bold px-3">
+    <ul class="md:flex">
+      <li class="font-syne py-2 md:py-0 text-sm font-bold px-3">
         <a
           class="link"
           href="https://stackoverflow.com/users/10698741/do%c4%9fukan?tab=profile"
@@ -15,15 +15,15 @@
           Stackoverflow
         </a>
       </li>
-      <li class="font-syne text-sm font-bold px-3">
+      <li class="font-syne py-2 md:py-0 text-sm font-bold px-3">
         <a class="link" href="https://github.com/dgknca" target="_blank" rel="nofollow"> Github </a>
       </li>
-      <li class="font-syne text-sm font-bold px-3">
+      <li class="font-syne py-2 md:py-0 text-sm font-bold px-3">
         <a class="link" href="https://codepen.io/dgknca" target="_blank" rel="nofollow">
           Codepen
         </a>
       </li>
-      <li class="font-syne text-sm font-bold px-3">
+      <li class="font-syne py-2 md:py-0 text-sm font-bold px-3">
         <a
           class="link"
           href="https://www.linkedin.com/in/dogukancavus/"
