@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { gsap } from 'gsap/dist/gsap'
-  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-  import { TextPlugin } from 'gsap/dist/TextPlugin'
+  import { gsap } from 'gsap/dist/gsap.js'
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
   import { onMount } from 'svelte'
   import Marquee from '$lib/Marquee.svelte'
 
-  gsap.registerPlugin(TextPlugin, ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger)
 
   onMount(() => {
     gsap.to('.title', {

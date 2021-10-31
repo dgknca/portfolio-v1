@@ -1,6 +1,6 @@
 <script lang="ts">
   // eslint-disable-next-line no-unused-vars
-  import { gsap } from 'gsap/dist/gsap'
+  import { gsap } from 'gsap/dist/gsap.js'
   import { onMount } from 'svelte'
 
   let ball = null

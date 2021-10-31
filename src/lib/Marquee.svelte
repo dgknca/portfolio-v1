@@ -1,6 +1,6 @@
 <script lang="ts">
   // eslint-disable-next-line no-unused-vars
-  import { gsap, TweenLite, Linear, Power3, TimelineLite } from 'gsap/dist/gsap'
+  import { gsap, TweenLite, Linear, Power3, TimelineLite } from 'gsap/dist/gsap.js'
   import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
   gsap.registerPlugin(ScrollTrigger)
   import { onMount, tick } from 'svelte'

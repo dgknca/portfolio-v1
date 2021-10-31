@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import { gsap } from 'gsap/dist/gsap'
+  import { gsap } from 'gsap/dist/gsap.js'
   export let name = ''
   export let href = ''
   export let description = ''
