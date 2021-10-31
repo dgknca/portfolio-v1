@@ -49,9 +49,6 @@
         or <span class="font-bold">SASS</span> to write CSS.
       </li>
       <li>
-        <span class="font-bold">Storybook</span> is essential for a design system.
-      </li>
-      <li>
         <span class="font-bold">Cross-browser compatible</span> (IE doesn't exist in my world).
       </li>
       <li>
@@ -68,7 +65,10 @@
         or <span class="font-bold">Next</span> for JAMStack.
       </li>
       <li>
-        <span class="font-bold">GSAP</span> to create animations.
+        <span class="font-bold">Storybook</span>
+      </li>
+      <li>
+        <span class="font-bold">GSAP</span> to animate.
       </li>
       <li>
         <span class="font-bold">Figma</span> to design interfaces.

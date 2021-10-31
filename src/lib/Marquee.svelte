@@ -34,7 +34,7 @@
       toggleActions: 'restart pause resume pause'
     })
 
-    tick()
+    await tick()
 
     wrapperEl.classList.remove('opacity-0')
     scrollAnimation.from(

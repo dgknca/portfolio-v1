@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
   import Marquee from '$lib/Marquee.svelte'
   import RepositoryCard from '$lib/RepositoryCard.svelte'
-  onMount(() => {})
 </script>
 
 <div class="py-8">

@@ -9,7 +9,8 @@
     </a>
     <div class="flex-1" />
     <nav class="flex items-center">
-      <a href="/open-source" class="link" sveltekit:prefetch>Open Source</a>
+      <a href="/hire-me" class="link mx-4" sveltekit:prefetch>Hire Me</a>
+      <a href="/open-source" class="link mx-4" sveltekit:prefetch>Open Source</a>
     </nav>
   </div>
 </header>
