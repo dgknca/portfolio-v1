@@ -8,11 +8,16 @@
       <Logo />
     </a>
     <div class="flex-1" />
-    <nav class="flex items-center">
-      <a href="/hire-me" class="link mx-4 text-sm sm:text-base" sveltekit:prefetch>Hire Me</a>
-      <a href="/open-source" class="link mx-4 text-sm sm:text-base" sveltekit:prefetch
-        >Open Source</a
-      >
+    <nav>
+      <ul class="flex items-center">
+        <li class="mx-4">
+          <a href="/hire-me" class="link text-sm sm:text-base" sveltekit:prefetch>Hire Me</a>
+        </li>
+        <li class="mx-4">
+          <a href="/open-source" class="link text-sm sm:text-base" sveltekit:prefetch
+          >Open Source</a>
+        </li>
+      </ul>
     </nav>
   </div>
 </header>
