@@ -3,12 +3,13 @@
   import { gsap, TweenLite, Linear, Power3, TimelineLite } from 'gsap/dist/gsap.js'
   import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
   gsap.registerPlugin(ScrollTrigger)
-  import { onMount, tick } from 'svelte'
+  import { onMount, onDestroy, tick } from 'svelte'
 
   export let scrollDirection: 0 | 1 = 1
   export let speed = 160
   export let repeat = 4
 
+  let w = null;
   let boxWidth = null
   let totalWidth = null
   let no01 = null
@@ -30,6 +31,8 @@
   let boxesEl = null
 
   onMount(async () => {
+    w = window;
+
     ScrollTrigger.defaults({
       toggleActions: 'restart pause resume pause'
     })
@@ -54,13 +57,17 @@
     )
 
     window.addEventListener('resize', onResize)
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll, {
+      passive: true
+    })
+
     previousWinWidth = window.innerWidth
     setMarquee()
     animateMarquee(scrollDirection === 1 ? 'left' : 'right')
   })
 
   const onScroll = () => {
+    console.log('page', page);
     const st = window.pageYOffset || document.documentElement.scrollTop
     let scrollDir = null
     if (st > lastScrollTop) {
@@ -81,6 +88,13 @@
 
     lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
   }
+
+  onDestroy(() => {
+    if (w) {
+      w.removeEventListener('resize', onResize)
+      w.removeEventListener('scroll', onScroll)
+    }
+  })
 
   const onResize = () => {
     clearTimeout(resize)
