@@ -67,7 +67,6 @@
   })
 
   const onScroll = () => {
-    console.log('page', page);
     const st = window.pageYOffset || document.documentElement.scrollTop
     let scrollDir = null
     if (st > lastScrollTop) {
