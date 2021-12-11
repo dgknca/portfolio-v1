@@ -21,8 +21,8 @@
 
 <div class="py-8">
   <Marquee>doğukan çavuş</Marquee>
-  <Marquee scrollDirection={0}><span class="font-normal">front-end</span> developer</Marquee>
-  <Marquee><span class="font-normal">ui</span> developer</Marquee>
+  <Marquee scrollDirection={0}>front-end developer</Marquee>
+  <Marquee>ui developer</Marquee>
 </div>
 
 <div class="container md:flex py-5 md:py-10 mt-3">
@@ -34,7 +34,7 @@
     <p class="mt-3">
       A UI focused front-end developer based in Istanbul, Turkey. More of a design-minded front-end
       developer or <a
-        class="link-inline"
+        class="text-blue-500 underline"
         href="https://bradfrost.com/blog/post/frontend-design/"
         target="_blank"
         rel="nofollow">front-end designers</a
@@ -43,7 +43,7 @@
 
     <ul class="list-disc ml-6 mt-6 leading-8">
       <li>
-        <span class="font-bold">Tailwind</span> (with JIT), <span class="font-bold">theme-ui</span>,
+        <span class="font-bold">Tailwind</span>, <span class="font-bold">theme-ui</span>,
         <span class="font-bold">styled-components</span>
         or <span class="font-bold">SASS</span> to write CSS.
       </li>

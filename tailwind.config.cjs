@@ -1,9 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: 'jit',
-  purge: ['./src/**/*.{html,js,svelte,ts}'],
-  darkMode: 'class',
+  content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     fontFamily: {
       sans: ['Manrope', 'sans-serif'],
@@ -13,7 +11,10 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       gray: {
-        ...colors.gray
+        ...colors.neutral
+      },
+      amber: {
+        ...colors.amber
       },
       black: {
         DEFAULT: '#000'

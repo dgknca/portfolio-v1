@@ -26,6 +26,19 @@
     </div>
   </div>
 
+   <div class="md:flex mt-4 md:mt-0">
+    <div class="md:w-6/12 flex items-center justify-center px-4 md:py-4">
+      <h2 class="font-syne font-bold text-2xl">tailwindcss</h2>
+    </div>
+    <div class="md:w-6/12 px-4 md:py-4 mt-2">
+      <RepositoryCard
+        name="tailwindcss-container-query"
+        href="https://github.com/dgknca/tailwindcss-container-query"
+        description="A plugin that provides CSS Container Queries for tailwindcss."
+      />
+    </div>
+  </div>
+
   <div class="md:flex mt-4 md:mt-0">
     <div class="md:w-6/12 flex items-center justify-center px-4 md:py-4">
       <h2 class="font-syne font-bold text-2xl">Javascript</h2>
@@ -59,15 +72,7 @@
         href="https://github.com/dgknca/v-collapse-it"
         description="A super simple Vue 3 directive to expand/collapse elements."
       />
-    </div>
-  </div>
-
-  <div class="md:flex mt-4 md:mt-0">
-    <div class="md:w-6/12 flex items-center justify-center px-4 md:py-4">
-      <h2 class="font-syne font-bold text-2xl">Contributor</h2>
-    </div>
-    <div class="md:w-6/12 px-4 md:py-4 mt-2">
-      <RepositoryCard name="vue3-tree" description="A tree library for Vue 3" />
+      <RepositoryCard name="vue3-tree" href="https://github.com/teamseodo/vue3-tree" description="A tree library for Vue 3" isParticipiant />
     </div>
   </div>
 </div>
