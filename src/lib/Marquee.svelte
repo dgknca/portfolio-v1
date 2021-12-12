@@ -5,6 +5,7 @@
   gsap.registerPlugin(ScrollTrigger)
   import { onMount, onDestroy, tick } from 'svelte'
 
+  export let noHeading = false
   export let scrollDirection: 0 | 1 = 1
   export let speed = 160
   export let repeat = 4
@@ -168,7 +169,7 @@
           bind:this={boxEl}
           class="box absolute font-inter px-2 text-4xl leading-4 sm:px-2 sm:text-6xl sm:leading-4 md:px-3 md:text-7xl md:leading-4 lg:px-3 lg:text-8xl lg:leading-4 xl:px-4 xl:text-9xl xl:leading-4 font-thin tracking-widest whitespace-nowrap uppercase"
         >
-          {#if i === 0}
+          {#if i === 0 && !noHeading}
             <h1><slot /></h1>
           {:else}
             <slot />

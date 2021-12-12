@@ -21,8 +21,8 @@
 
 <div class="py-8">
   <Marquee>doğukan çavuş</Marquee>
-  <Marquee scrollDirection={0}>front-end developer</Marquee>
-  <Marquee>ui developer</Marquee>
+  <Marquee scrollDirection={0} noHeading>front-end developer</Marquee>
+  <Marquee noHeading>ui developer</Marquee>
 </div>
 
 <div class="container md:flex py-5 md:py-10 mt-3">
